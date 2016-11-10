@@ -1,13 +1,14 @@
 import React from 'react';
-import Backbone from 'backbone';
-import GameBoard from './GameBoard';
+import CategoryBox from './CategoryBox';
+
 
 export default React.createClass({
   render() {
     window.console.log(this);
   return(
     <div>
-    <GameBoard/>
+      <CategoryBox/>
+
     </div>
 
   );

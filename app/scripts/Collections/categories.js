@@ -7,46 +7,50 @@ export default Backbone.Collection.extend ({
 
 
 getCategories () {
+
 $.ajax({
   type: 'GET',
-  url: "http://jservice.io/api/category?id=105",
+  url: 'http://jservice.io/api/category?id=105',
   succes: (response) => {
-    this.setState({categories: response})
-  }
-})
-$.ajax({
-  type: 'GET',
-  url: "http://jservice.io/api/category?id=103",
-  succes: (response) => {
-    this.setState({categories: response})
+    window.console.log(this);
+    this.setState({categories: response});
   }
 });
 $.ajax({
   type: 'GET',
-  url: "http://jservice.io/api/category?id=67",
+  url: 'http://jservice.io/api/category?id=103',
   succes: (response) => {
-    this.setState({categories: response})
+    this.setState({categories: response});
   }
 });
 $.ajax({
   type: 'GET',
-  url: "http://jservice.io/api/category?id=561",
+  url: 'http://jservice.io/api/category?id=67',
   succes: (response) => {
-    this.setState({categories: response})
+    this.setState({categories: response});
   }
 });
 $.ajax({
   type: 'GET',
-  url: "http://jservice.io/api/category?id=211",
+  url: 'http://jservice.io/api/category?id=561',
   succes: (response) => {
-    this.setState({categories: response})
+    this.setState({categories: response});
+
   }
 });
 $.ajax({
   type: 'GET',
-  url: "http://jservice.io/api/category?id=793",
+  url: 'http://jservice.io/api/category?id=211',
   succes: (response) => {
-    this.setState({categories: response})
+    this.setState({categories: response});
   }
-})
+});
+$.ajax({
+  type: 'GET',
+  url: 'http://jservice.io/api/category?id=793',
+  succes: (response) => {
+    this.setState({categories: response});
+  }
+});
 }
+});
