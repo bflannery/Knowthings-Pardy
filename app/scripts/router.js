@@ -10,6 +10,8 @@ import category from './Models/category';
 import GameBoardPage from './Components/GameBoardPage';
 import GameBoard from './Components/GameBoard';
 
+import store from './store';
+
 
 const router = (
 

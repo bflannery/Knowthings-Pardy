@@ -6,51 +6,52 @@ export default Backbone.Collection.extend ({
   model: category,
 
 
-getCategories () {
+getCategories() {
 
 $.ajax({
   type: 'GET',
   url: 'http://jservice.io/api/category?id=105',
-  succes: (response) => {
+  success: (response) => {
     window.console.log(this);
-    this.setState({categories: response});
+    this.add(response);
   }
 });
 $.ajax({
   type: 'GET',
   url: 'http://jservice.io/api/category?id=103',
-  succes: (response) => {
-    this.setState({categories: response});
+  success: (response) => {
+    this.add(response);
   }
 });
 $.ajax({
   type: 'GET',
   url: 'http://jservice.io/api/category?id=67',
-  succes: (response) => {
-    this.setState({categories: response});
+  success: (response) => {
+    this.add(response);
   }
 });
 $.ajax({
   type: 'GET',
   url: 'http://jservice.io/api/category?id=561',
-  succes: (response) => {
-    this.setState({categories: response});
+  success: (response) => {
+    this.add(response);
 
   }
 });
 $.ajax({
   type: 'GET',
   url: 'http://jservice.io/api/category?id=211',
-  succes: (response) => {
-    this.setState({categories: response});
+  success: (response) => {
+      this.add(response);
   }
 });
 $.ajax({
   type: 'GET',
   url: 'http://jservice.io/api/category?id=793',
-  succes: (response) => {
-    this.setState({categories: response});
+  success: (response) => {
+    this.add(response);
   }
 });
+
 }
 });
