@@ -28,7 +28,7 @@ export default React.createClass({
     window.console.log(this.state);
   return(
     <div>
-    <GameBoard/>
+    <GameBoard categories = {this.state.categories}/>
     </div>
 
   );

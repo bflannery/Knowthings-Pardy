@@ -2,13 +2,11 @@ import React from 'react';
 
 
 export default React.createClass({
-  render() {
-    // window.console.log(this);
-  return(
-    <div>
+    render() {
+        return (
 
-    </div>
+            <li> {this.props.title} </li>
 
-  );
-}
+        );
+    }
 });

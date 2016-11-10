@@ -10,12 +10,12 @@ getCategories() {
 
 $.ajax({
   type: 'GET',
-  url: 'http://jservice.io/api/category?id=105',
+  url: 'http://jservice.io/api/category?id=106',
   success: (response) => {
-    window.console.log(this);
     this.add(response);
   }
 });
+
 $.ajax({
   type: 'GET',
   url: 'http://jservice.io/api/category?id=103',
