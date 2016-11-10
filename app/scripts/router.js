@@ -12,6 +12,7 @@ import GameBoard from './Components/GameBoard';
 
 
 const router = (
+
     <Router history={hashHistory}>
       <Route path="/" component={GameBoardPage}/>
     </Router>
