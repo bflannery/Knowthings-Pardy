@@ -9,7 +9,7 @@ export default React.createClass({
 
 
   render() {
-      window.console.log(this.props);
+      // window.console.log(this.props);
   return(
 
     <ul>

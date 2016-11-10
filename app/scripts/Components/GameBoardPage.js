@@ -25,7 +25,7 @@ export default React.createClass({
   },
 
   render() {
-    window.console.log(this.state);
+    // window.console.log(this.state);
   return(
     <div>
     <GameBoard categories = {this.state.categories}/>
