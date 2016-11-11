@@ -3,15 +3,18 @@ import _ from'underscore';
 import QuestionBox from './QuestionBox';
 
 
+
 export default React.createClass ({
   render () {
 
   let question1 = this.props.questions.filter((question, i ,arr) => {
     if(question.value === 200) {
       return question;
-
     }
+    
   });
+  let shuffledArr = _.shuffle(question1);
+
 
   let question2 = this.props.questions.filter((question, i ,arr) => {
     if(question.value === 400) {
@@ -40,7 +43,7 @@ export default React.createClass ({
 
 return (
   <ul>
-    <QuestionBox question = {question1}/>
+    <QuestionBox question = {shuffledArr}/>
     <QuestionBox question = {question2}/>
     <QuestionBox question = {question3}/>
     <QuestionBox question = {question4}/>

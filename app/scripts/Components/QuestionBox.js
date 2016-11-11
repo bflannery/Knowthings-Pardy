@@ -18,11 +18,10 @@ export default React.createClass ({
       ${this.props.question[0].value}
       </li>
 
-
     );
   } else if(this.state.clicked===true && this.state.answered ===false){
     return (
-<div>
+      <div>
     <li onClick={this.handleQuestion}>
       ${this.props.question[0].value}
     </li>
@@ -56,9 +55,5 @@ export default React.createClass ({
       clicked: true,
       answered: true
     });
-
-
   }
-
-
 });
