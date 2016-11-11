@@ -5,8 +5,10 @@ import _ from 'underscore';
 
 
 export default React.createClass({
+
   render() {
-    let randomQuesion = this.props.clues.map((clue,id)=> {
+
+    let randomQuestion = this.props.questions.clues.map((clue,id)=> {
            return <QuestionBox key={id} clue={clue}/>;
          });
 
