@@ -1,6 +1,5 @@
 import React from 'react';
 import GameBoard from './GameBoard';
-import categories from '../Collections/categories';
 import store from '../store';
 
 export default React.createClass({
@@ -12,7 +11,6 @@ export default React.createClass({
     };
   },
 
-
   componentWillMount(){
     store.categories.getCategories();
     store.categories.on('update change', ()=>{
@@ -23,7 +21,6 @@ export default React.createClass({
     });
 
   },
-
   render() {
     // window.console.log(this.state);
   return(

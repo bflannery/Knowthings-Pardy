@@ -1,44 +1,51 @@
-import Backbone from 'backbone';
 import React from 'react';
+import _ from'underscore';
 import QuestionBox from './QuestionBox';
-import _ from 'underscore';
+
 
 export default React.createClass ({
   render () {
-// window.console.log(this.props.questions.clues);
 
+  let question1 = this.props.questions.filter((question, i ,arr) => {
+    if(question.value === 200) {
+      return question;
 
-//
-let copyArr = this.props.questions.clues.map((clue)=> {
-  return clue;
-}
-);
+    }
+  });
 
-let randomQuestion = _.times(5, (i) => {
-       var random = Math.floor(Math.random()*(copyArr.length + 1 -1)) + 1;
-       var question = copyArr[random];
-       copyArr = _.without(copyArr, question);
-       return question;
-   }).map((clue,id)=> {
-       return <QuestionBox key={id} clue={clue}/>;
-   });
+  let question2 = this.props.questions.filter((question, i ,arr) => {
+    if(question.value === 400) {
+      return question;
+    }
+  });
 
+  let question3 = this.props.questions.filter((question, i ,arr) => {
+    if(question.value === 600) {
+      return question;
+    }
+  });
 
-// let clue = this.props.questions.clues[];
+  let question4 = this.props.questions.filter((question, i ,arr) => {
+    if(question.value === 800) {
+        return  question;
+    }
+  });
 
- return (
-   <ul>
-    {randomQuestion}
-    </ul>
-  //
-  // <ul>
-  // <QuestionBox  clue={clue}/>
-  // <QuestionBox  clue={clue}/>
-  // <QuestionBox  clue={clue}/>
-  // <QuestionBox  clue={clue}/>
-  // <QuestionBox  clue={clue}/>
-  // </ul>
+  let question5 = this.props.questions.filter((question, i ,arr) => {
+    if(question.value === 1000) {
 
+      return question;
+    }
+  });
+
+return (
+  <ul>
+    <QuestionBox question = {question1}/>
+    <QuestionBox question = {question2}/>
+    <QuestionBox question = {question3}/>
+    <QuestionBox question = {question4}/>
+    <QuestionBox question = {question5}/>
+  </ul>
 );
 }
 });
