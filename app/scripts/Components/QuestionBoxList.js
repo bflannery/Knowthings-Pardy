@@ -1,54 +1,20 @@
+import Backbone from 'backbone';
 import React from 'react';
-import _ from'underscore';
 import QuestionBox from './QuestionBox';
+import _ from 'underscore';
 
 
-
-export default React.createClass ({
-  render () {
-
-  let question1 = this.props.questions.filter((question, i ,arr) => {
-    if(question.value === 200) {
-      return question;
-    }
-    
-  });
-  let shuffledArr = _.shuffle(question1);
+export default React.createClass({
+  render() {
+    let randomQuesion = this.props.clues.map((clue,id)=> {
+           return <QuestionBox key={id} clue={clue}/>;
+         });
 
 
-  let question2 = this.props.questions.filter((question, i ,arr) => {
-    if(question.value === 400) {
-      return question;
-    }
-  });
+    return (
+   <ul>{randomQuestion}</ul>
 
-  let question3 = this.props.questions.filter((question, i ,arr) => {
-    if(question.value === 600) {
-      return question;
-    }
-  });
 
-  let question4 = this.props.questions.filter((question, i ,arr) => {
-    if(question.value === 800) {
-        return  question;
-    }
-  });
-
-  let question5 = this.props.questions.filter((question, i ,arr) => {
-    if(question.value === 1000) {
-
-      return question;
-    }
-  });
-
-return (
-  <ul>
-    <QuestionBox question = {shuffledArr}/>
-    <QuestionBox question = {question2}/>
-    <QuestionBox question = {question3}/>
-    <QuestionBox question = {question4}/>
-    <QuestionBox question = {question5}/>
-  </ul>
-);
-}
+ );
+  }
 });

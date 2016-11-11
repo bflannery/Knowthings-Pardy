@@ -12,7 +12,7 @@ export default React.createClass({
 
     <ul className = "column">
       <CategoryBox title={this.props.category.title}/>
-      <QuestionBoxList questions={this.props.category.clues}/>
+      <QuestionBoxList questions={this.props.category}/>
     </ul>
   );
 }

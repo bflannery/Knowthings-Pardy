@@ -1,7 +1,7 @@
 import Backbone from 'backbone';
-import categories from './Collections/categories';
+import Categories from './Collections/categories';
 
 export default {
-  categories: new categories()
+  categories: new Categories()
 
 };
