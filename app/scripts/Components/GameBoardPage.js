@@ -1,5 +1,6 @@
 import React from 'react';
 import GameBoard from './GameBoard';
+import PlayerContainer from './PlayerContainer';
 import store from '../store';
 
 export default React.createClass({
@@ -25,6 +26,7 @@ export default React.createClass({
   return(
     <div className = "game-board">
     <GameBoard categories = {this.state.categories}/>
+    <PlayerContainer answers = {this.state.categories}/>
     </div>
 
   );

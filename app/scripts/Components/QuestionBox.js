@@ -1,6 +1,8 @@
 import React from 'react';
 import store from '../store';
 import _ from 'underscore';
+import Backbone from 'backbone';
+import Modal from './Modal';
 
 
 export default React.createClass({
@@ -12,13 +14,12 @@ export default React.createClass({
     };
   },
   render(){
-  console.log(this.props.clue);
 
     if(this.state.clicked===false && this.state.answered===false){
 
     return(
-      <li className="points" onClick={this.handleQuestion}>
-      ${this.props.clue.value}
+      <li className="points-container" onClick={this.handleQuestion}>
+      ${this.props.clue.get('value')}
       </li>
     );
 
@@ -26,25 +27,15 @@ export default React.createClass({
 
   return(
     <div>
-        <li className="points" onClick={this.handleQuestion}>
-          ${this.props.clue.value}
+        <li className="points-container" onClick={this.handleQuestion}>
+          ${this.props.clue.get('value')}
         </li>
-      <div className="modal">
-        <div className="question">
-          <h3>{this.props.clue.question}</h3>
-          <form>
-            <input id="answer" type="text" placeholder="Answer Here"/>
-            <input id="submit" type="submit" value="Submit" onClick={this.handleSubmit}/>
-          </form>
-        </div>
-      </div>
+        <Modal clue={this.props.clue}/>
   </div>
 );
 }else if(this.state.clicked===true && this.state.answered===true && this.state.correct===false){
   return(
-    <li className="empty-points">
-    <span className="answer">{questions.answer.replace(/\<[\/]?i\>/, '')}</span>
-    </li>
+    <li className="empty-points"></li>
   );
 }else if(this.state.clicked===true && this.state.answered===true && this.state.correct===true){
   return(
@@ -59,13 +50,6 @@ handleQuestion(e){
   this.setState({
     clicked:true,
     answered:false
-  });
-},
-handleSubmit(e){
-  e.preventDefault();
-  this.setState({
-    clicked:true,
-    answered:true,
   });
 }
 });

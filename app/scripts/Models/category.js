@@ -1,6 +1,7 @@
 import React from 'react';
 import Backbone from 'backbone';
 import _ from 'underscore';
+import Question from './question';
 
 export default Backbone.Model.extend({
     defaults: {
@@ -13,18 +14,11 @@ shuffleClues() {
   let oldClueList = this.get('clues');
   let newClueList = _.take(_.shuffle(oldClueList), 5).map((clue,i)=> {
     clue.value = (i+1) * 200;
-    return clue;
+    let x = new Question(clue);
+    return x;
   });
-  console.log(newClueList);
-
 
 this.set('clues', newClueList);
     }
 
   });
-
-
-  // .map((clue, i)=> {
-  //       clue.value = (i +1) * 200;
-  //       return clue;
-  //       });
