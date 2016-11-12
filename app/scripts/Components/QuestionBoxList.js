@@ -14,7 +14,7 @@ export default React.createClass({
 
 
     return (
-   <ul>{randomQuestion}</ul>
+   <ul className="question-list">{randomQuestion}</ul>
 
 
  );

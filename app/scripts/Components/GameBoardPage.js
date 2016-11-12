@@ -23,7 +23,7 @@ export default React.createClass({
   },
   render() {
   return(
-    <div>
+    <div className = "game-board">
     <GameBoard categories = {this.state.categories}/>
     </div>
 
