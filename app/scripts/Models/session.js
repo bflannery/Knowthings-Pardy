@@ -34,8 +34,9 @@ checkAnswer(userInput) {
 
 
 },
-updateAnswer(newAnswer){
-  this.set({answerBox: newAnswer});
+
+updateAnswer(theAnswer){
+  this.set({answerBox: theAnswer});
 
 },
 
