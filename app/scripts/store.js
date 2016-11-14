@@ -1,4 +1,4 @@
-import Backbone from 'backbone';
+import React from 'react';
 import Categories from './Collections/categories';
 import Session from './Models/session';
 

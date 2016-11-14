@@ -1,17 +1,14 @@
-import Backbone from 'backbone';
 import React from 'react';
-import QuestionBox from './QuestionBox';
-import _ from 'underscore';
 
+import QuestionBox from './QuestionBox';
 
 export default React.createClass({
 
   render() {
-    let randomQuestion = this.props.questions.clues.map((clue,id)=> {
-           return <QuestionBox key={id} clue={clue}/>;
-         });
-    return (
-   <ul className="question-list">{randomQuestion}</ul>
-    );
+
+    let randomQuestions = this.props.questions.map((question, i, arr) => {
+      return <QuestionBox key={question.get('id')} question={question} />
+    });
+    return <ul>{randomQuestions}</ul>;
   }
 });

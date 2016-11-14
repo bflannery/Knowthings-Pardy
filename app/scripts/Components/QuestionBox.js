@@ -1,55 +1,52 @@
 import React from 'react';
-import store from '../store';
-import _ from 'underscore';
-import Backbone from 'backbone';
-import Modal from './Modal';
 
+import ModalBox from './modalBox';
+
+import store from '../store';
 
 export default React.createClass({
-  getInitialState(){
-    return{
-      clicked:false,
-      answered:false,
-      correct:false
+  getInitialState() {
+    return {
+      question: this.props.question
     };
   },
-  render(){
+  componentWillMount() {
+    this.props.question.on('change', () => {
+      this.setState({
+        question: this.props.question
+      });
+    });
+  },
 
-    if(this.state.clicked===false && this.state.answered===false){
+  render() {
+    let singleQuestion;
+    let answered = this.state.question.get('answered');
+    let pointValue = this.state.question.get('value');
 
-    return(
-      <li className="points-container" onClick={this.handleQuestion}>
-      ${this.props.clue.get('value')}
+
+    if(!answered) {
+      singleQuestion = (
+        <h3 onClick={this.handleClick}>
+            ${pointValue}
+        </h3>
+      );
+    } else {
+      singleQuestion = <h3></h3>;
+    }
+
+    return (
+
+      <li className = "value-box">
+      {singleQuestion}
       </li>
+
+
     );
-
-  }else if(this.state.clicked===true && this.state.answered===false){
-
-  return(
-    <div>
-        <li className="points-container" onClick={this.handleQuestion}>
-          ${this.props.clue.get('value')}
-        </li>
-        <Modal clue={this.props.clue}/>
-  </div>
-);
-}else if(this.state.clicked===true && this.state.answered===true && this.state.correct===false){
-  return(
-    <li className="empty-points"></li>
-  );
-}else if(this.state.clicked===true && this.state.answered===true && this.state.correct===true){
-  return(
-  <li className="empty-points">
-  <span className="correct-answer">CORRECT!</span>
-  </li>
-);
-}
-},
-
-handleQuestion(e){
-  this.setState({
-    clicked:true,
-    answered:false
-  });
-}
+  },
+  handleClick(e) {
+    console.log(this.props.question.get('answer'));
+    e.preventDefault();
+    this.props.question.changeStatus();
+    store.session.handleModalBox(this.props.question);
+  }
 });

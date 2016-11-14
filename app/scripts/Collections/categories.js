@@ -7,7 +7,6 @@ export default Backbone.Collection.extend ({
 
 
 getCategories() {
-
 $.ajax({
   type: 'GET',
   url: 'http://jservice.io/api/category?id=306',
