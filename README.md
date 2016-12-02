@@ -16,9 +16,6 @@
   [Backendless](https://backendless.com/) (MBaaS)
 - Mobile backend as a service (MBaaS), also known as "backend as a service" (BaaS),is a model for providing web app and mobile app developers with a way to link their applications to backend cloud storage and APIs exposed by back end applications while also providing features such as user management, push notifications, and integration with social networking services.
 
-
-## Process
-
 ## Features
   - **Gameboard**:
     - A game board with 6 categories.
