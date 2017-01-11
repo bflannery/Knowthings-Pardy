@@ -33,7 +33,7 @@ export default React.createClass({
 
   return(
     <div className = "game-page">
-    <h1> Random Knowledge Game </h1>
+    <h1> Jeopardy </h1>
     <GameBoardColumn category = {this.state.categories}/>
     <ModalBox stats = {this.state.session}/>
     <PlayerContainer stats = {this.state.session}/>
